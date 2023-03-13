@@ -43,6 +43,7 @@ h2, h3 {
   margin:0;
   padding:0;
   padding-bottom:1.5rem;
+  align-items: center;
 }
 
 form {
@@ -106,6 +107,7 @@ form {
 
   /* box-shadows are fancy */
   box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  border: 2.5px dashed;
 }
 
 
@@ -158,6 +160,8 @@ form {
   font-size: 1.2rem;
   font-weight: 600;
   border: 1.5px dashed;
+  position: sticky;
+  bottom: 0;
 }
 
 .footer a {
@@ -269,7 +273,7 @@ div.carousel {
 .prev:hover,
 .next:hover {
   border: 1.5px
-  background-color:thistle
+  background-color: thistle
   /* Pick a good background colour for your hover pseudoclass */
 }
 
@@ -312,5 +316,6 @@ form input {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      flex: 1;
     }
 }

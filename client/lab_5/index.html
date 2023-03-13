@@ -1,9 +1,38 @@
-<!-- Bring in your successful HTML/CSS from the Flexbox lab -->
-<!-- Your page will need a form in it, but that form will not need an action
-    You will need to add the attribute "name" to your input
-    with a value of 'resto'
-
-    You will need to hook your script.js to this file for the midterm to work
-    you will need a "filter" button with a type of "button" and a
-    "load data" button with a type of "submit" on it
--->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-euiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam Ma's Labs for INST377</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>Sam Ma's Labs for INST377</h1>
+      </header>
+      <div class="container">
+      <div class="left_section box">
+        <!--left box-->
+        <h2>Form Inputs</h2>
+        <form
+          action="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json"
+          class="box main_form">
+          <label for="resto">Restaurant Name</label>
+          <input type="text" id="resto" name="resto"/>
+          <button type="button" class="filter_button">Filter Data</button>
+          <button type="submit">Load Data</button>
+        </form>
+      </div>
+      <div class="right_selection box">
+        <!--right box-->
+        <h2>Local Restaurants</h2>
+        <div class="restaurant_list box">A list of restaurants from an API</div>
+      </div>
+    </div>
+    <footer class="footer">
+      samma137 <a href="https://github.com/samma137">Github Account Link</a>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
