@@ -318,4 +318,21 @@
         align-items: center;
         flex: 1;
       }
+  
+      .left_section {
+        flex: 1 1 auto;
+      }
+  
+      .right_section {
+        flex: 1 1 auto;
+        justify-content: flex-start;
+      }
+      
+      .box {
+        width:100%
+        width: -moz-available;
+        width: -webkit-fill-available;
+        width: fill-available;
+        align-items: flex-start;
+      }
   }
