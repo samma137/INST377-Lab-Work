@@ -27,7 +27,7 @@ function cutRestaurantList(list) {
   const range = [...Array(15).keys()];
   return (newArray = range.map((item) => {
     const index = getRandomIntInclusive(0, list.length - 1);
-    return list(index);
+    return list[index];
   }));
 }
 
@@ -62,7 +62,6 @@ async function mainEvent() {
 
     console.log(formProps);
     const newList = filterList(currentList, formProps.resto);
-    injectHTML(newList);
     console.log(newList);
     injectHTML(newList);
   });

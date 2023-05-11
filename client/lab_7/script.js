@@ -27,7 +27,7 @@ function getRandomIntinclusive(min, max) {
     const range = [...Array(15).keys()];
     return (newArray = range.map((item) => {
       const index = getRandomIntInclusive(0, list.length - 1);
-      return list(index);
+      return list[index];
     }));
   }
   
@@ -36,9 +36,13 @@ function getRandomIntinclusive(min, max) {
     const filterDataButton = document.querySelector("#filter");
     const loadDataButton = document.querySelector("#data_load");
     const generateListButton = document.querySelector("#generate");
+    const textField = document.querySelector("#resto");
+
     const loadAnimation = document.querySelector("#data_load_animation");
     loadAnimation.style.display = "none";
+    generateListButton.classList.add("hidden");
   
+    let storedList = [];
     let currentList = [];
   
     loadDataButton.addEventListener("click", async (submitEvent) => {
@@ -49,7 +53,10 @@ function getRandomIntinclusive(min, max) {
         "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json"
       );
   
-      currentList = await results.json();
+      storedList = await results.json();
+      if (storedList.List.length > 0) {
+        generateListButton.classList.remove("hidden");
+      }
   
       loadAnimation.style.display = "none";
       console.table(currentList);
@@ -62,16 +69,23 @@ function getRandomIntinclusive(min, max) {
   
       console.log(formProps);
       const newList = filterList(currentList, formProps.resto);
-      injectHTML(newList);
       console.log(newList);
       injectHTML(newList);
     });
   
     generateListButton.addEventListener("click", (event) => {
       console.log("generate new list");
-      const restaurantsList = cutRestaurantList(currentList);
-      injectHTML(restaurantsList);
+      currentList = cutRestaurantList(storedList);
+      console.log(currentList)
+      injectHTML(currentList);
     });
+
+    textField.Field.addEventListener("input", (event) =>{
+        console.log("input", event.target.value);
+        const newList = filterList(curentList, event.target.value);
+        console.log(newList);
+        injectHTML(newList);
+    })
   }
   
   document.addEventListener("DOMContentLoaded", async () => mainEvent()); // the async keyword means we can make API requests
