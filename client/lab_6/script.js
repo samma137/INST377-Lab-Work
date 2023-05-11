@@ -9,7 +9,7 @@ function injectHTML(list) {
   const target = document.querySelector('#restaurant_list');
   target.innerHTML = '';
   list.forEach((item, index) => {
-    const str = '<li>${item.name}</li>';
+    const str = `<li>${item.name}</li>`;
     target.innerHTML += str
   })
 }
