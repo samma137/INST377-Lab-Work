@@ -1,4 +1,4 @@
-function getRandomIntinclusive(min, max) {
+function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -9,7 +9,7 @@ function getRandomIntinclusive(min, max) {
     const target = document.querySelector("#restaurant_list");
     target.innerHTML = "";
     list.forEach((item, index) => {
-      const str = "<li>${item.name}</li>";
+      const str = '<li>${item.name}</li>';
       target.innerHTML += str;
     });
   }
