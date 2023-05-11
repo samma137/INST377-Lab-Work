@@ -9,7 +9,7 @@ function getRandomIntInclusive(min, max) {
     const target = document.querySelector("#restaurant_list");
     target.innerHTML = "";
     list.forEach((item, index) => {
-      const str = '<li>${item.name}</li>';
+      const str = `<li>${item.name}</li>`;
       target.innerHTML += str;
     });
   }
@@ -54,7 +54,7 @@ function getRandomIntInclusive(min, max) {
       );
   
       storedList = await results.json();
-      if (storedList.List.length > 0) {
+      if (storedList.length > 0) {
         generateListButton.classList.remove("hidden");
       }
   
@@ -82,7 +82,7 @@ function getRandomIntInclusive(min, max) {
 
     textField.Field.addEventListener("input", (event) =>{
         console.log("input", event.target.value);
-        const newList = filterList(curentList, event.target.value);
+        const newList = filterList(currentList, event.target.value);
         console.log(newList);
         injectHTML(newList);
     })
