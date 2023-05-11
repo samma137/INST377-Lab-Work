@@ -8,7 +8,7 @@ function injectHTML(list) {
   console.log('fired injectHTML')
   const target = document.querySelector('#restaurant_list');
   target.innerHTML = '';
-  list.forEach((item) => {
+  list.forEach((item, index) => {
     const str = '<li>${item.name}</li>';
     target.innerHTML += str
   })
@@ -19,7 +19,7 @@ function filterList(list, query) {
     const lowerCaseName = item.name.toLowerCase();
     const lowerCaseQuery = query.toLowerCase();
     return lowerCaseName.includes(lowerCaseQuery);
-  });
+  })
 }
 
 function cutRestaurantList(list) {
@@ -28,7 +28,7 @@ function cutRestaurantList(list) {
   return (newArray = range.map((item) => {
     const index = getRandomIntInclusive(0, list.length - 1);
     return list[index];
-  }));
+  })
 }
 
 async function mainEvent() {
@@ -60,15 +60,15 @@ async function mainEvent() {
 
     console.log(formProps);
     const newList = filterList(currentList, formProps.resto);
-    console.log(newList);
     injectHTML(newList);
-  });
+    console.log(newList);
+  })
 
   generateListButton.addEventListener('click', (event) => {
     console.log('generate new list');
     const restaurantsList = cutRestaurantList(currentList);
     injectHTML(restaurantsList);
-  });
+  })
 }
 
 document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
