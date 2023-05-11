@@ -5,13 +5,13 @@ function getRandomIntInclusive(min, max) {
 }
 
 function injectHTML(list) {
-  console.log('fired injectHTML');
+  console.log('fired injectHTML')
   const target = document.querySelector('#restaurant_list');
   target.innerHTML = '';
   list.forEach((item, index) => {
     const str = '<li>${item.name}</li>';
-    target.innerHTML += str;
-  });
+    target.innerHTML += str
+  })
 }
 
 function filterList(list, query) {
